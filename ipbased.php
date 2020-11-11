@@ -9,21 +9,22 @@
 <body>
 	<h1>Mass Reverse Domain To Ip</h1>
 	<form action="" method="POST">
-		Note : <b> in the list file must be example.com</b>
+		Note : <b> in the list must be example.com</b>
 		<br>
-		Input Your File Max 500 Site => <input type="file" name="file">
+		Input Your Site Max 500 Site =><br>
+		<textarea rows="10" cols="60" name="file" placeholder="Your Site"></textarea>
 		<input type="submit" value="submit">
 	</form>
 </body>
 </html>
 <?php
-error_reporting(0);
-$file = $_POST['file'];
-if (isset($file)) {
-	$site = file_get_contents($file) or die("File Not Found");
-	$exp = explode("\n", $site);
-	$array = array_unique($exp);
-	foreach ($array as $key) {
+if (isset($_POST['file']) && !empty($_POST['file'])) {
+	$i = 0;
+	$filter = htmlspecialchars($_POST['file']);
+	$exp = explode("\n", $filter);
+	echo "List Ip : <br>";
+	echo "<textarea rows='10' cols='60'>";
+	foreach ($exp as $key) {
 		if(!preg_match('#^http(s)?://#',$key)){
 			$a = "http://".$key;
 		}
@@ -32,9 +33,15 @@ if (isset($file)) {
 		}
 		$parse = parse_url($a);
 		$domain = preg_replace('/^www\./', '', $parse['host']);
-		$www = "www.".$domain;
+		$fuck = preg_replace('/_/', '', $domain);
+		$www = "www.".$fuck;
 		$host = gethostbyname($www);
-		echo $host."<br>";
+		while ($host > $i) {
+			echo $host."\n";
+			$i++;
+			break;
+		}
 	}
+	echo "</textarea>";
 }
 ?>
