@@ -39,6 +39,6 @@ function curl($url){
 		foreach ($json['domainArray'] as $key) {
 			echo $key[0]."\n";
 		}
-		echo "</textarea><br>";
+		echo "</textarea>";
 	}
 ?>
