@@ -38,7 +38,6 @@ if (isset($_POST['namakota']) && !empty($_POST['namakota'])) {
 	}
 }
 else if (isset($_POST['semuakota']) && !empty($_POST['semuakota'])) {
-	$filter = $_POST['semuakota'];
 	$kotall = file_get_contents("https://api.banghasan.com/sholat/format/json/kota");
 	$decode = json_decode($kotall, true);
 	foreach ($decode['kota'] as $key) {
