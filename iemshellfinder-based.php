@@ -55,12 +55,12 @@ if (isset($sub)) {
 		$web = curl($url,$filter2,$i,$filter3);
 		if ($web == 200) {
 			echo "<font color='green'>Found : <a target='_blank' href='$url/admin/temp/surveys/$filter2/$i/$filter3'>$filter/admin/temp/surveys/$filter2/$i/$filter3</a></font><br>";
-			echo "<center>Matching Finished!!</center>";
 			break;
 		}
 		else {
 			echo "<font color='red'>Not Found : $url/admin/temp/surveys/$filter2/$i/$filter3</font><br>";
 		}
+		echo "<center>Matching Finished!!</center>";
 	}
 }
 ?>
