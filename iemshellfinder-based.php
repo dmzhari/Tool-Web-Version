@@ -46,11 +46,11 @@ if (isset($sub)) {
 	else {
 		$url = $filter;
 	}
-	for ($i=0; $i < 501; $i++) { 
+	for ($i=1; $i < 501; $i++) { 
 		$web = curl($url,$filter2,$i,$filter3);
 		if ($web == 200) {
 			echo "<font color='green'>Found : <a target='_blank' href='$url/admin/temp/surveys/$filter2/$i/$filter3'>$filter/admin/temp/surveys/$filter2/$i/$filter3</a></font><br>";
-			echo "<center>Finished!!</center>";
+			echo "<center>Matching Finished!!</center>";
 			break;
 		}
 		else {
