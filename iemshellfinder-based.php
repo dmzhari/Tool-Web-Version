@@ -9,11 +9,11 @@
 <body>
 	<h1>Finder Shell In Proof Email Marketer</h1>
 	<form method="POST">
-		Your Site (example.com) : <input type="text" name="site">
+		Your Site (example.com) : <input type="text" name="site" required="true">
 		<br><br>
-		Your Name Shell (shell.php) : <input type="text" name="shell">
+		Your Name Shell (shell.php) : <input type="text" name="shell" required="true">
 		<br><br>
-		Your FormId : <input type="text" name="id">
+		Your FormId : <input type="text" name="id" required="true">
 		<input type="submit" name="sub">
 		<br><br>
 	</form>
