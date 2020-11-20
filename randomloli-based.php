@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Random Waifu/Husbu</title>
+	<title>Random Loli</title>
 	<meta charset="utf-8">
 	<meta name="author" content="./EcchiExploit">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
