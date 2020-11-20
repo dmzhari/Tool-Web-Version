@@ -40,7 +40,7 @@
 				<?php
 				if (isset($_POST['char'])) {
 					//echo "<a href='$result'><img class='img-fluid' src='$result'></a><br>";
-					echo "<a href='$result2'><img class='img-fluid img-thumbnail' src='$result2'><a/>";
+					echo "<a href='$result2' target='_blank'><img class='img-fluid img-thumbnail' src='$result2'><a/>";
 				}
 				?>
 			</div>
