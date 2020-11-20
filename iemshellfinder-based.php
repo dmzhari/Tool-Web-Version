@@ -49,12 +49,12 @@ if (isset($sub)) {
 	for ($i=0; $i < 501; $i++) { 
 		$web = curl($url,$filter2,$i,$filter3);
 		if ($web == 200) {
-			echo "<font color='green'>Found : <a target='_blank' href='$filter/admin/temp/surveys/$filter2/$i/$filter3'>$filter/admin/temp/surveys/$filter2/$i/$filter3</a></font><br>";
+			echo "<font color='green'>Found : <a target='_blank' href='$url/admin/temp/surveys/$filter2/$i/$filter3'>$filter/admin/temp/surveys/$filter2/$i/$filter3</a></font><br>";
 			echo "<center>Finished!!</center>";
 			break;
 		}
 		else {
-			echo "<font color='red'>Not Found : $filter/admin/temp/surveys/$filter2/$i/$filter3</font><br>";
+			echo "<font color='red'>Not Found : $url/admin/temp/surveys/$filter2/$i/$filter3</font><br>";
 		}
 	}
 }
