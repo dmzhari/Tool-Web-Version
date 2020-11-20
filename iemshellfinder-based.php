@@ -10,14 +10,19 @@
 	<h1>Finder Shell In Proof Email Marketer</h1>
 	<form method="POST">
 		Your Site (example.com) : <input type="text" name="site">
-		Your Name Shell (shell.php): <input type="text" name="shell">
+		<br><br>
+		Your Name Shell (shell.php) : <input type="text" name="shell">
+		<br><br>
 		Your FormId : <input type="text" name="id">
 		<input type="submit" name="sub">
+		<br><br>
 	</form>
 </body>
 </html>
 <?php
 error_reporting(0);
+set_time_limit(0);
+clearstatcache();
 $sub = $_POST['sub'];
 $site = $_POST['site'];
 $shell = $_POST['shell'];
