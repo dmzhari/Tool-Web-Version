@@ -36,11 +36,17 @@ if (isset($_POST['sub'])) {
 	$exp = explode("\n", $fil3);
 	foreach ($exp as $key) {
 		$notify = curl($fil,$fil2,$key);
-		if (preg_match("/<div class=\"success\">(.*)/", $notify, $hasil)) {
-			echo "success : $key<br>";
+		if (preg_match("/<div class=\"error\">(.*)<br>Mirrored onhold/", $notify)) {
+			echo "Success Mirror Onhold : $key\n";
+		}
+		else if (preg_match("/<div class=\"error\">(.*)<br>Domain Not Active/", $notify)) {
+			echo "Success Mirror Onhold : $key\n";
+		}
+		else if (preg_match("/<div class=\"success\">(.*)/", $notify)) {
+			echo "Sucess Mirror : $key\n";
 		}
 		else {
-			echo "Failed : $key<br>";
+			echo "Failed Mirror : $key\n";
 		}
 	}
 }
