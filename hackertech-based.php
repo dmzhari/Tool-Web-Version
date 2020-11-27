@@ -15,8 +15,7 @@
 </body>
 </html>
 <?php
-error_reporting(0);
-set_time_limit(30);
+set_time_limit(60);
 $hacker = $_POST['hacker'];
 $team = $_POST['team'];
 $url = $_POST['url'];
@@ -37,7 +36,12 @@ if (isset($_POST['sub'])) {
 	$exp = explode("\n", $fil3);
 	foreach ($exp as $key) {
 		$notify = curl($fil,$fil2,$key);
-		echo "Success : $key<br>";
+		if (preg_match("/<div class=\"success\">(.*)/", $notify, $hasil)) {
+			echo "success : $key<br>";
+		}
+		else {
+			echo "Failed : $key<br>";
+		}
 	}
 }
 ?>
