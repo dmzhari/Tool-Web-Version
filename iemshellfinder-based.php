@@ -60,7 +60,7 @@ if (isset($sub)) {
 		else {
 			echo "<font color='red'>Not Found : $url/admin/temp/surveys/$filter2/$i/$filter3</font><br>";
 		}
-		echo "<center>Matching Finished!!</center>";
 	}
+	echo "<center>Matching Finished!!</center>";
 }
 ?>
