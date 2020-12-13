@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hackerrank Mass Mirror</title>
+	<title>ZoneHack Mass Mirror</title>
 	<meta name="author" content="./EcchiExploit">
-	<meta name="description" content="hackerrank.tech mass mirror submit">
+	<meta name="description" content="zone-hack.org mass mirror submit">
 </head>
 <body>
 	<form method="POST">
@@ -21,7 +21,7 @@ $team = $_POST['team'];
 $url = $_POST['url'];
 function curl($nick,$team,$site){
 	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, "http://hackerrank.tech/notify.php");
+	curl_setopt($ch, CURLOPT_URL, "http://zone-hack.org/notify.php");
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, "defacer=$nick&team=$team&vulntype=0&reason=0&urlb=$site&submit=Notify");
 	curl_setopt($ch, CURLOPT_POST, 1);
