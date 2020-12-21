@@ -58,9 +58,8 @@ if (isset($_POST['url']) && !empty($_POST['url'])) {
 		echo "<br>Site : $web<br>";
 		for ($i=0; $i < count($list); $i++) {
 			if (site($web,$username,$list[$i]) == 302) {
-				echo "Found : $username | $list[$i]<br>
-				<a href='$key/admin/index.php?route=common/login'>$key/admin/index.php?route=common/login</a><br>";
-				break;
+				echo "<br>Found : $username | $list[$i]<br>
+				Login : <a href='$key/admin/index.php?route=common/login'>$key/admin/index.php?route=common/login</a><br><br>";
 			}
 			else {
 				echo "Not Found : $username | $list[$i]<br>";
