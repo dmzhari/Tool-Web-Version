@@ -12,7 +12,7 @@
 		<table>
 			<td>Site</td>
 			<td>:</td>
-			<td><input type="text" name="domain"></td>
+			<td><input type="text" name="domain" placeholder="example.com"></td>
 			<td><button type="submit">submit</button></td>
 		</table>
 	</form>
@@ -46,5 +46,9 @@ if (!empty($_POST['domain']))
 		echo "$key\n";
 	}
 	echo '</textarea>';
+}
+else if (empty($_POST['domain']))
+{
+	echo 'Input Your Url Or Domain';
 }
 ?>
