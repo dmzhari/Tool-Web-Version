@@ -41,33 +41,29 @@ function curl($mail)
 if (!empty($_POST['email']))
 {
 	$email = htmlspecialchars($_POST['email']);
-	$explode = explode("\n", $email);
-	foreach($explode as $key)
+	$lookup = curl($key);
+	$scrapt = preg_match_all("/<a href=\"https:\/\/(.*?)\">(.*?)<\/a>/i", $lookup, $domain);
+	$url = preg_replace("/<i class=\"(.*?)\"><\/i>/", '', $domain[2]);
+	$url = str_replace('Teguh Aprianto', '', $url);
+	$filter = array_filter($url);
+	if ($filter == null)
 	{
-		$lookup = curl($key);
-		$scrapt = preg_match_all("/<a href=\"https:\/\/(.*?)\">(.*?)<\/a>/i", $lookup, $domain);
-		$url = preg_replace("/<i class=\"(.*?)\"><\/i>/", '', $domain[2]);
-		$url = str_replace('Teguh Aprianto', '', $url);
-		$filter = array_filter($url);
-		if ($filter == null)
-		{
-			echo "No Result In This Email $key";
-		}
-		else
-		{
-			?>
-			<table>
-			<tr>
-				<td>Result :</td>
-			</tr>
-			<tr>
-				<td>
-					<textarea cols="60" rows="10"><?php foreach ($filter as $domains){ echo "$domains\n"; } ?></textarea>
-				</td>
-			</tr>
-			</table>
-			<?php
-		}
+		echo "No Result In This Email $key";
+	}
+	else
+	{
+		?>
+		<table>
+		<tr>
+			<td>Result :</td>
+		</tr>
+		<tr>
+			<td>
+				<textarea cols="60" rows="10"><?php foreach ($filter as $domains){ echo "$domains\n"; } ?></textarea>
+			</td>
+		</tr>
+		</table>
+		<?php
 	}
 }
 ?>
