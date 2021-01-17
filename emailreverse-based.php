@@ -24,11 +24,11 @@ function curl($mail)
 {
 	$setopt = array(
 		CURLOPT_URL 			=> 'https://osint.sh/reversewhois/',
-		CURLOPT_RETURNTRANSFER	=> true,
+		CURLOPT_RETURNTRANSFER		=> true,
 		CURLOPT_POST			=> true,
 		CURLOPT_POSTFIELDS		=> "email=$mail",
 		CURLOPT_USERAGENT		=> 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-		CURLOPT_CONNECTTIMEOUT	=> 60,
+		CURLOPT_CONNECTTIMEOUT		=> 60,
 		CURLOPT_TIMEOUT 		=> 60,
 		CURLOPT_HEADER			=> false
 	);
